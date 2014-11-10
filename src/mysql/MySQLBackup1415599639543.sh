@@ -1,0 +1,1 @@
+mysqldump -u ${Username} --password=${Password} ${Options} ${Database Name} ${Table Name} > ${File Path}

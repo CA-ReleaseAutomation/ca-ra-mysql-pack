@@ -1,0 +1,1 @@
+mysql -u ${Username} --password=${Password} ${Database Name} ${Options} < ${File Path}

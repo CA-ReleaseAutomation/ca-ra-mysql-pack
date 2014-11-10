@@ -1,0 +1,1 @@
+mysql ${Database Name} -u ${Username} --password=${Password} --execute="LOAD DATA LOCAL INFILE '${File Path}' INTO TABLE ${Table Name};"

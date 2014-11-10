@@ -1,0 +1,66 @@
+{
+   "SCRIPTAction" : {
+      "actionPack" : {
+         "name" : "MySQL",
+         "category" : "MySQL",
+         "description" : "Integration actions for the MySQL relational database server.",
+         "author" : "CA Technologies",
+         "dependencies" : "",
+         "platform" : "Windows and Linux",
+         "version" : "0.1  ",
+         "license" : "",
+         "imageLocation" : "http://localhost:8080/RDKServer/workingDirectory/ActionPacks/mysql/logo-mysql-110x57.png",
+         "lastModified" : "2014-11-09T22:07:12.904-08:00",
+         "tags" : [ ],
+         "packageName" : "mysql"
+      },
+      "name" : "MySQL - Stop Service",
+      "description" : "Stop the MySQL service.",
+      "inputParamList" : [ {
+         "name" : "Service Name",
+         "type" : "String",
+         "description" : "Service name",
+         "required" : true,
+         "variableName" : "servicename",
+         "arrayOption" : false
+      } ],
+      "outputParamList" : [ {
+         "name" : "Execution Output",
+         "type" : "String",
+         "description" : "Standard out from the command execution.",
+         "filterValue" : "[\\s\\S]*",
+         "filterType" : "REGEX",
+         "variableName" : "executionoutput",
+         "source" : "standardOut",
+         "arrayOption" : false
+      } ],
+      "successMessage" : "Execution succeeded.",
+      "type" : "SCRIPT",
+      "complete" : true,
+      "lastModified" : "2014-11-09T22:07:19.863-08:00",
+      "className" : "MySQLStopService",
+      "packageName" : "com.ca.mysql",
+      "shellType" : "DEFAULT_OS",
+      "scripts" : [ {
+         "content" : "net stop ${Service Name}",
+         "envVariables" : [ {
+         } ],
+         "execDir" : "",
+         "name" : "MySQLStopService1415599639859.bat",
+         "osType" : "WINDOWS",
+         "overwriteOutput" : true,
+         "timeout" : 0,
+         "waitForProcess" : true
+      }, {
+         "content" : "sudo service mysqld stop",
+         "envVariables" : [ {
+         } ],
+         "execDir" : "",
+         "name" : "MySQLStopService1415599639862.sh",
+         "osType" : "LINUX",
+         "overwriteOutput" : true,
+         "timeout" : 0,
+         "waitForProcess" : true
+      } ]
+   }
+}

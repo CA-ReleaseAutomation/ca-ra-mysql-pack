@@ -1,0 +1,101 @@
+{
+   "SCRIPTAction" : {
+      "actionPack" : {
+         "name" : "MySQL",
+         "category" : "MySQL",
+         "description" : "Integration actions for the MySQL relational database server.",
+         "author" : "CA Technologies",
+         "dependencies" : "",
+         "platform" : "Windows and Linux",
+         "version" : "0.1  ",
+         "license" : "",
+         "imageLocation" : "http://localhost:8080/RDKServer/workingDirectory/ActionPacks/mysql/logo-mysql-110x57.png",
+         "lastModified" : "2014-11-09T22:07:12.904-08:00",
+         "tags" : [ ],
+         "packageName" : "mysql"
+      },
+      "name" : "MySQL - Upload Data",
+      "description" : "Restore a database into the MySQL server from a file.",
+      "inputParamList" : [ {
+         "name" : "Working Directory",
+         "type" : "String",
+         "description" : "The MySQL working directory.",
+         "required" : false,
+         "variableName" : "workingdirectory",
+         "arrayOption" : false
+      }, {
+         "name" : "Username",
+         "type" : "String",
+         "description" : "The username to authenticate with the database.",
+         "required" : false,
+         "variableName" : "username",
+         "arrayOption" : false
+      }, {
+         "name" : "Password",
+         "type" : "String",
+         "description" : "The password to authenticate with the database.",
+         "required" : false,
+         "variableName" : "password",
+         "arrayOption" : false
+      }, {
+         "name" : "Database Name",
+         "type" : "String",
+         "description" : "The name of the database to use for this action.",
+         "required" : false,
+         "variableName" : "databasename",
+         "arrayOption" : false
+      }, {
+         "name" : "Table Name",
+         "type" : "String",
+         "description" : "The name of the table to use for this action.",
+         "required" : false,
+         "variableName" : "tablename",
+         "arrayOption" : false
+      }, {
+         "name" : "File Path",
+         "type" : "String",
+         "description" : "The full path to the file to use.",
+         "required" : false,
+         "variableName" : "filepath",
+         "arrayOption" : false
+      } ],
+      "outputParamList" : [ {
+         "name" : "Execution Output",
+         "type" : "String",
+         "description" : "Standard out from the command execution.",
+         "filterValue" : "[\\s\\S]*",
+         "filterType" : "REGEX",
+         "variableName" : "executionoutput",
+         "source" : "standardOut",
+         "arrayOption" : false
+      } ],
+      "successMessage" : "Execution succeeded.",
+      "type" : "SCRIPT",
+      "complete" : true,
+      "lastModified" : "2014-11-09T22:07:19.904-08:00",
+      "className" : "MySQLUploadData",
+      "packageName" : "com.ca.mysql",
+      "shellType" : "DEFAULT_OS",
+      "scripts" : [ {
+         "content" : "mysql ${Database Name} -u ${Username} --password=${Password} --execute=\"LOAD DATA LOCAL INFILE '${File Path}' INTO TABLE ${Table Name};\"",
+         "envVariables" : [ {
+         } ],
+         "execDir" : "${Working Directory}",
+         "name" : "MySQLUploadData1415599639900.bat",
+         "osType" : "WINDOWS",
+         "overwriteOutput" : true,
+         "timeout" : 0,
+         "waitForProcess" : true
+      }, {
+         "content" : "mysql ${Database Name} -u ${Username} --password=${Password} --execute=\"LOAD DATA LOCAL INFILE '${File Path}' INTO TABLE ${Table Name};\"",
+         "envVariables" : [ {
+         } ],
+         "execDir" : "${Working Directory}",
+         "name" : "MySQLUploadData1415599639902.sh",
+         "osType" : "LINUX",
+         "overwriteOutput" : true,
+         "timeout" : 0,
+         "waitForProcess" : true
+      } ]
+   }
+}

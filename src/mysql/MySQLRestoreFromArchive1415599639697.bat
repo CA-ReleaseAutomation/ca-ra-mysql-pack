@@ -1,0 +1,1 @@
+${Archivator} < ${File Path} | mysql -u ${Username} --password=${Password} ${Options} ${Database Name}

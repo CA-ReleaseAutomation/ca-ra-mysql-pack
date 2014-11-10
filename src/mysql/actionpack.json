@@ -1,0 +1,16 @@
+{
+   "ActionPack" : {
+      "name" : "MySQL",
+      "category" : "MySQL",
+      "description" : "Integration actions for the MySQL relational database server.",
+      "author" : "CA Technologies",
+      "dependencies" : "",
+      "platform" : "Windows and Linux",
+      "version" : "0.1 ",
+      "license" : "",
+      "imageLocation" : "http://localhost:8080/RDKServer/workingDirectory/ActionPacks/mysql/logo-mysql-110x57.png",
+      "lastModified" : "2014-11-09T22:07:12.904-08:00",
+      "tags" : [ ],
+      "packageName" : "mysql"
+   }
+}
